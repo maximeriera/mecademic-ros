@@ -28,6 +28,10 @@ constexpr double RAD_TO_DEG = 180.0 / M_PI;
 constexpr int CONTROL_PORT = 10000;
 constexpr int MONITOR_PORT = 10001;
 
+// Meca500 monitoring data IDs
+constexpr int MONITOR_RT_JOINT_POSITION_ID = 2210;
+constexpr int MONITOR_RT_JOINT_VELOCITY_ID = 2212;
+
 class Meca500SystemHardware : public hardware_interface::SystemInterface
 {
 public:

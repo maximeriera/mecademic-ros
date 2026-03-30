@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 200
+    update_rate: 50
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -11,6 +11,7 @@ controller_manager:
 # Notice that this is OUTSIDE the controller_manager block
 meca_velocity_controller:
   ros__parameters:
+  
     joints:
       - meca_axis_1
       - meca_axis_2
@@ -24,9 +25,9 @@ meca_velocity_controller:
       - position
       - velocity
     gains:
-      meca_axis_1: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
-      meca_axis_2: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
-      meca_axis_3: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
-      meca_axis_4: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
-      meca_axis_5: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
-      meca_axis_6: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
+      meca_axis_1: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 3.70, u_clamp_min: -3.70}
+      meca_axis_2: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 3.70, u_clamp_min: -3.70}
+      meca_axis_3: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 3.70, u_clamp_min: -3.70}
+      meca_axis_4: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 5.80, u_clamp_min: -5.80}
+      meca_axis_5: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 5.80, u_clamp_min: -5.80}
+      meca_axis_6: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 8.40, u_clamp_min: -8.40}

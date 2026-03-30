@@ -61,7 +61,16 @@ def generate_launch_description():
         "moveit_simple_controller_manager": controllers_yaml["moveit_simple_controller_manager"],
     }
 
-    # 5. Define the Move Group Node
+    # 5. Trajectory execution settings — prevent premature timeout on real hardware
+    trajectory_execution = {
+        "trajectory_execution": {
+            "allowed_execution_duration_scaling": 1.2,
+            "allowed_goal_duration_margin": 0.5,
+            "execution_duration_monitoring": True,
+        }
+    }
+
+    # 6. Define the Move Group Node
     run_move_group_node = Node(
         package="moveit_ros_move_group",
         executable="move_group",
@@ -70,16 +79,15 @@ def generate_launch_description():
             robot_description,
             robot_description_semantic,
             robot_description_kinematics,
-            robot_description_planning, # <--- Add this new parameter
+            robot_description_planning,
             planning_pipeline,
             moveit_controllers,
+            trajectory_execution,
             {"use_sim_time": False},
         ],
     )
 
-    # ... (Keep all your existing code above this) ...
-
-    # 6. Start RViz2 with MoveIt parameters
+    # 7. Start RViz2 with MoveIt parameters
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",

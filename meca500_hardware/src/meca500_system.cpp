@@ -166,15 +166,31 @@ bool Meca500SystemHardware::parse_joint_values(const std::string & data, double 
 {
   std::istringstream ss(data);
   std::string token;
-  int idx = 0;
-  while (std::getline(ss, token, ',') && idx < 6) {
+  std::vector<double> parsed_values;
+
+  while (std::getline(ss, token, ',')) {
     try {
-      values[idx++] = std::stod(token);
+      parsed_values.push_back(std::stod(token));
     } catch (...) {
       return false;
     }
   }
-  return idx == 6;
+
+  // Monitoring payload can be either:
+  //  - 6 values: [theta1, theta2, theta3, theta4, theta5, theta6]
+  //  - 7 values: [timestamp, theta1, theta2, theta3, theta4, theta5, theta6]
+  size_t offset = 0;
+  if (parsed_values.size() == 7) {
+    offset = 1;  // Skip timestamp.
+  } else if (parsed_values.size() != 6) {
+    return false;
+  }
+
+  for (size_t i = 0; i < 6; ++i) {
+    values[i] = parsed_values[i + offset];
+  }
+
+  return true;
 }
 
 void Meca500SystemHardware::close_socket(int & fd)
@@ -339,12 +355,17 @@ hardware_interface::CallbackReturn Meca500SystemHardware::on_activate(
   }
 
   // 4. Enable real-time monitoring on the monitoring port
-  //    This makes the robot stream joint positions (2026) and velocities (2027)
+  //    This makes the robot stream joint positions and velocities.
   send_command("SetMonitoringInterval(0.001)");
-  send_command("SetRealTimeMonitoring(1)");
+  send_command(
+    "SetRealTimeMonitoring(" + std::to_string(MONITOR_RT_JOINT_POSITION_ID) + ", " +
+    std::to_string(MONITOR_RT_JOINT_VELOCITY_ID) + ")");
 
   // 5. Set velocity timeout so the robot stops if we miss sending commands
   send_command("SetVelTimeout(0.05)");
+
+  // 6. Set acceleration to max - 100%
+  send_command("SetJointAcc(100)");
 
   // Zero command velocities
   std::fill(hw_joint_commands_velocity_.begin(), hw_joint_commands_velocity_.end(), 0.0);
@@ -538,13 +559,13 @@ void Meca500SystemHardware::receive_data_loop()
 
       double values[6];
 
-      if (code == 2026 && parse_joint_values(data, values)) {
+      if (code == MONITOR_RT_JOINT_POSITION_ID && parse_joint_values(data, values)) {
         // Real-time joint positions (degrees from Meca500 → radians for ROS)
         std::lock_guard<std::mutex> lock(state_mutex_);
         for (int i = 0; i < 6; i++) {
           hw_joint_states_position_[i] = values[i] * DEG_TO_RAD;
         }
-      } else if (code == 2027 && parse_joint_values(data, values)) {
+      } else if (code == MONITOR_RT_JOINT_VELOCITY_ID && parse_joint_values(data, values)) {
         // Real-time joint velocities (degrees/s from Meca500 → radians/s for ROS)
         std::lock_guard<std::mutex> lock(state_mutex_);
         for (int i = 0; i < 6; i++) {
