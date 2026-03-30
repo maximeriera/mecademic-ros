@@ -10,7 +10,20 @@ RUN apt update -q \
     && apt install -y --no-install-recommends \
     software-properties-common \
     python3-pip \
+    python3-rosdep \
+    python3-colcon-common-extensions \
     xauth \
+    ros-$ROS_DISTRO-xacro \
+    ros-$ROS_DISTRO-urdf \
+    ros-$ROS_DISTRO-robot-state-publisher \
+    ros-$ROS_DISTRO-joint-state-publisher-gui \
+    ros-$ROS_DISTRO-rviz2 \
+    ros-$ROS_DISTRO-hardware-interface \
+    ros-$ROS_DISTRO-controller-manager \
+    ros-$ROS_DISTRO-ros2-control \
+    ros-$ROS_DISTRO-ros2-controllers \
+    ros-$ROS_DISTRO-joint-state-broadcaster \
+    ros-$ROS_DISTRO-joint-trajectory-controller \
     && apt clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

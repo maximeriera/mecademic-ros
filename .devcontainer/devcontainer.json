@@ -36,8 +36,8 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/rosdev/ros2_ws/src,type=bind",
   "mounts": [
         // This is the critical change for Windows:
-        "source=/mnt/wslg/.X11-unix,target=/tmp/.X11-unix,type=bind",
-        "source=/mnt/wslg,target=/mnt/wslg,type=bind"
+        //"source=/mnt/wslg/.X11-unix,target=/tmp/.X11-unix,type=bind",
+        //"source=/mnt/wslg,target=/mnt/wslg,type=bind"
     ],
   "containerEnv": {
         "DISPLAY": ":0",

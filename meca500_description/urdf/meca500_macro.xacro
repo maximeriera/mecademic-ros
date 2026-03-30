@@ -16,7 +16,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://meca500_description/meshes/Link_0.dae"/>
+          <mesh filename="package://meca500_description/meshes/link_0.dae"/>
         </geometry>
         <material name="grey"/>
       </visual>
@@ -45,7 +45,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://meca500_description/meshes/Link_1.dae"/>
+          <mesh filename="package://meca500_description/meshes/link_1.dae"/>
         </geometry>
         <material name="grey"/>
       </visual>
@@ -68,7 +68,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://meca500_description/meshes/Link_2.dae"/>
+          <mesh filename="package://meca500_description/meshes/link_2.dae"/>
         </geometry>
         <material name="grey"/>
       </visual>
