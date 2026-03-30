@@ -1,0 +1,57 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Colcon
+.colcon_install_layout
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+.eggs/
+
+# C/C++ build artifacts
+*.o
+*.so
+*.a
+*.lo
+*.la
+*.cmake
+!*Config.cmake
+!*config.cmake
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+CTestTestfile.cmake
+
+# IDE / Editor
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Devcontainer (keep devcontainer.json but ignore generated files)
+.devcontainer/.env
+
+# ROS logs and bag files
+*.bag
+*.db3
+ros2_bag_*/
+
+# Generated URDF from xacro (if any)
+*.urdf.generated
+
+# Doxygen
+docs/html/
+docs/latex/

@@ -1,0 +1,32 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    meca_velocity_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+# Notice that this is OUTSIDE the controller_manager block
+meca_velocity_controller:
+  ros__parameters:
+    joints:
+      - meca_axis_1
+      - meca_axis_2
+      - meca_axis_3
+      - meca_axis_4
+      - meca_axis_5
+      - meca_axis_6
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+    gains:
+      meca_axis_1: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
+      meca_axis_2: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
+      meca_axis_3: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
+      meca_axis_4: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
+      meca_axis_5: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}
+      meca_axis_6: {p: 1.5, i: 0.0, d: 0.0, ff_velocity_scale: 1.0}

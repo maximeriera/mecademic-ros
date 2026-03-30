@@ -1,0 +1,53 @@
+{
+  "name": "ROS 2 Workspace humble-ros-base",
+  "remoteUser": "rosdev",
+  "build": {
+      "dockerfile": "Dockerfile",
+      "args": {
+          "USERNAME": "rosdev",
+          "GID": "1000",
+          "UID": "1000"
+      }
+  },
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "ms-python.python",
+              "charliermarsh.ruff",
+              "ms-vscode.cpptools-extension-pack",
+              "ms-iot.vscode-ros",
+              "smilerobotics.urdf",
+              "redhat.vscode-xml",
+              "tamasfe.even-better-toml",
+              "timonwong.shellcheck",
+              "yzhang.markdown-all-in-one",
+          ],
+          "settings": {
+              "files.associations": {
+                  "*.rviz": "yaml",
+                  "*.srdf": "xml",
+                  "*.urdf": "xml",
+                  "*.xacro": "xml"
+              }
+          }
+      }
+  },
+  "workspaceFolder": "/home/rosdev/ros2_ws",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/rosdev/ros2_ws/src,type=bind",
+  "mounts": [
+        // This is the critical change for Windows:
+        "source=/mnt/wslg/.X11-unix,target=/tmp/.X11-unix,type=bind",
+        "source=/mnt/wslg,target=/mnt/wslg,type=bind"
+    ],
+  "containerEnv": {
+        "DISPLAY": ":0",
+        "WAYLAND_DISPLAY": "wayland-0",
+        "XDG_RUNTIME_DIR": "/mnt/wslg/runtime-dir",
+        "PULSE_SERVER": "/mnt/wslg/PulseServer",
+        "LIBGL_ALWAYS_SOFTWARE": "1" // Use this if you don't have a GPU configured
+    },
+  "runArgs": [
+        "--net=host",
+        "--ipc=host"
+    ]
+}
