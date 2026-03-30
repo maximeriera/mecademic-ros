@@ -185,6 +185,34 @@ void Meca500SystemHardware::close_socket(int & fd)
   }
 }
 
+bool Meca500SystemHardware::reconnect_monitor_socket(int retry_count, int retry_delay_ms)
+{
+  close_socket(monitor_fd_);
+
+  for (int attempt = 1; attempt <= retry_count; ++attempt) {
+    if (!is_active_.load() || is_shutting_down_.load()) {
+      return false;
+    }
+
+    int fd = connect_socket(robot_ip_, MONITOR_PORT);
+    if (fd >= 0) {
+      monitor_fd_ = fd;
+      RCLCPP_INFO(LOGGER, "Monitoring socket reconnected on attempt %d/%d.", attempt, retry_count);
+      return true;
+    }
+
+    RCLCPP_WARN(
+      LOGGER,
+      "Monitoring reconnect attempt %d/%d failed. Retrying in %d ms...",
+      attempt,
+      retry_count,
+      retry_delay_ms);
+    std::this_thread::sleep_for(std::chrono::milliseconds(retry_delay_ms));
+  }
+
+  return false;
+}
+
 // -------------------------------------------------------
 // 1. Initialization
 // -------------------------------------------------------
@@ -259,6 +287,8 @@ hardware_interface::CallbackReturn Meca500SystemHardware::on_activate(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   RCLCPP_INFO(LOGGER, "Activating... connecting to Meca500 at %s", robot_ip_.c_str());
+  is_shutting_down_.store(false);
+  is_active_.store(false);
   monitor_fault_.store(false);
   monitor_fault_logged_.store(false);
 
@@ -337,7 +367,12 @@ hardware_interface::CallbackReturn Meca500SystemHardware::on_deactivate(
   RCLCPP_INFO(LOGGER, "Deactivating... stopping robot.");
 
   // Signal the monitoring thread to stop
+  is_shutting_down_.store(true);
   is_active_.store(false);
+
+  // Closing the monitor socket first ensures recv()/poll() unblock promptly.
+  close_socket(monitor_fd_);
+
   if (tcp_receive_thread_.joinable()) {
     tcp_receive_thread_.join();
   }
@@ -352,7 +387,6 @@ hardware_interface::CallbackReturn Meca500SystemHardware::on_deactivate(
   send_command("DeactivateRobot");
 
   // Close sockets
-  close_socket(monitor_fd_);
   close_socket(control_fd_);
 
   RCLCPP_INFO(LOGGER, "Meca500 deactivated.");
@@ -440,21 +474,45 @@ void Meca500SystemHardware::receive_data_loop()
       continue;
     }
     if (ret < 0) {
+      if (!is_active_.load() || is_shutting_down_.load()) {
+        break;
+      }
       RCLCPP_ERROR(LOGGER, "Polling monitor socket failed: %s", strerror(errno));
-      monitor_fault_.store(true);
-      break;
+      if (!reconnect_monitor_socket()) {
+        monitor_fault_.store(true);
+        break;
+      }
+      continue;
+    }
+
+    if ((pfd.revents & (POLLERR | POLLHUP | POLLNVAL)) != 0) {
+      if (!is_active_.load() || is_shutting_down_.load()) {
+        break;
+      }
+      RCLCPP_WARN(LOGGER, "Monitoring socket signaled error/hangup (revents=0x%x).", pfd.revents);
+      if (!reconnect_monitor_socket()) {
+        monitor_fault_.store(true);
+        break;
+      }
+      continue;
     }
 
     char raw[2048];
     ssize_t n = recv(monitor_fd_, raw, sizeof(raw) - 1, 0);
     if (n <= 0) {
+      if (!is_active_.load() || is_shutting_down_.load()) {
+        break;
+      }
       if (n == 0) {
         RCLCPP_WARN(LOGGER, "Monitoring port disconnected.");
       } else {
         RCLCPP_ERROR(LOGGER, "Monitoring socket receive failed: %s", strerror(errno));
       }
-      monitor_fault_.store(true);
-      break;
+      if (!reconnect_monitor_socket()) {
+        monitor_fault_.store(true);
+        break;
+      }
+      continue;
     }
 
     buffer.append(raw, static_cast<size_t>(n));

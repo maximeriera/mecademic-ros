@@ -73,6 +73,7 @@ private:
   // --- Asynchronous Communication Setup ---
   std::thread tcp_receive_thread_;
   std::atomic<bool> is_active_{false};
+  std::atomic<bool> is_shutting_down_{false};
   std::atomic<bool> monitor_fault_{false};
   std::atomic<bool> monitor_fault_logged_{false};
   std::mutex state_mutex_;
@@ -87,6 +88,7 @@ private:
   std::string receive_response(int fd, int timeout_ms = 5000);
   bool wait_for_response(int fd, int expected_code, int timeout_ms = 10000);
   void close_socket(int & fd);
+  bool reconnect_monitor_socket(int retry_count = 5, int retry_delay_ms = 200);
 
   // Background worker function to continuously poll the TCP monitor port
   void receive_data_loop();
