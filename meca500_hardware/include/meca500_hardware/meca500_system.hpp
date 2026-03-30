@@ -73,6 +73,8 @@ private:
   // --- Asynchronous Communication Setup ---
   std::thread tcp_receive_thread_;
   std::atomic<bool> is_active_{false};
+  std::atomic<bool> monitor_fault_{false};
+  std::atomic<bool> monitor_fault_logged_{false};
   std::mutex state_mutex_;
 
   // --- TCP Socket File Descriptors ---

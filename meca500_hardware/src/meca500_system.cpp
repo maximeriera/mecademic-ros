@@ -259,6 +259,8 @@ hardware_interface::CallbackReturn Meca500SystemHardware::on_activate(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   RCLCPP_INFO(LOGGER, "Activating... connecting to Meca500 at %s", robot_ip_.c_str());
+  monitor_fault_.store(false);
+  monitor_fault_logged_.store(false);
 
   // --- Connect to Control Port (10000) ---
   control_fd_ = connect_socket(robot_ip_, CONTROL_PORT);
@@ -364,6 +366,13 @@ hardware_interface::CallbackReturn Meca500SystemHardware::on_deactivate(
 hardware_interface::return_type Meca500SystemHardware::read(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
+  if (monitor_fault_.load()) {
+    if (!monitor_fault_logged_.exchange(true)) {
+      RCLCPP_ERROR(LOGGER, "Monitoring feedback lost, transitioning hardware interface to ERROR.");
+    }
+    return hardware_interface::return_type::ERROR;
+  }
+
   // The background thread continuously updates position/velocity from
   // the monitoring port. We just copy the latest values under the lock.
   // This keeps read() non-blocking and deterministic.
@@ -383,6 +392,13 @@ hardware_interface::return_type Meca500SystemHardware::read(
 hardware_interface::return_type Meca500SystemHardware::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
+  if (monitor_fault_.load()) {
+    if (!monitor_fault_logged_.exchange(true)) {
+      RCLCPP_ERROR(LOGGER, "Skipping command write because monitoring feedback is unavailable.");
+    }
+    return hardware_interface::return_type::ERROR;
+  }
+
   // Convert velocity commands from radians/s (ROS) to degrees/s (Meca500)
   char cmd[256];
   std::snprintf(cmd, sizeof(cmd),
@@ -394,7 +410,11 @@ hardware_interface::return_type Meca500SystemHardware::write(
     hw_joint_commands_velocity_[4] * RAD_TO_DEG,
     hw_joint_commands_velocity_[5] * RAD_TO_DEG);
 
-  send_command(cmd);
+  if (!send_command(cmd)) {
+    RCLCPP_ERROR(LOGGER, "Failed to send velocity command, transitioning hardware interface to ERROR.");
+    monitor_fault_.store(true);
+    return hardware_interface::return_type::ERROR;
+  }
 
   return hardware_interface::return_type::OK;
 }
@@ -416,8 +436,13 @@ void Meca500SystemHardware::receive_data_loop()
     pfd.events = POLLIN;
 
     int ret = poll(&pfd, 1, 100);  // 100ms timeout to check is_active_
-    if (ret <= 0) {
+    if (ret == 0) {
       continue;
+    }
+    if (ret < 0) {
+      RCLCPP_ERROR(LOGGER, "Polling monitor socket failed: %s", strerror(errno));
+      monitor_fault_.store(true);
+      break;
     }
 
     char raw[2048];
@@ -425,7 +450,10 @@ void Meca500SystemHardware::receive_data_loop()
     if (n <= 0) {
       if (n == 0) {
         RCLCPP_WARN(LOGGER, "Monitoring port disconnected.");
+      } else {
+        RCLCPP_ERROR(LOGGER, "Monitoring socket receive failed: %s", strerror(errno));
       }
+      monitor_fault_.store(true);
       break;
     }
 
