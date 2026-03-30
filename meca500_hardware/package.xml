@@ -4,8 +4,8 @@
   <name>meca500_hardware</name>
   <version>0.0.1</version>
   <description>ROS2 hardware interface plugin for the Meca500 robot arm, implementing ros2_control system hardware components.</description>
-  <maintainer email="rosdev@todo.todo">rosdev</maintainer>
-  <license>TODO: License declaration</license>
+  <maintainer email="maxime.riera@mecademic.com">Maxime Riera</maintainer>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

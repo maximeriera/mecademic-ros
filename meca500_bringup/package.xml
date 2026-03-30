@@ -4,8 +4,8 @@
   <name>meca500_bringup</name>
   <version>0.0.1</version>
   <description>Bringup package for the Meca500 robot arm, providing launch files and configuration for ros2_control, controllers, and RViz visualization.</description>
-  <maintainer email="rosdev@todo.todo">rosdev</maintainer>
-  <license>TODO: License declaration</license>
+  <maintainer email="maxime.riera@mecademic.com">Maxime Riera</maintainer>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

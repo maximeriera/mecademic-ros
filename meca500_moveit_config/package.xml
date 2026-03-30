@@ -4,8 +4,8 @@
   <name>meca500_moveit_config</name>
   <version>0.0.1</version>
   <description>MoveIt 2 configuration package for the Mecademic Meca500 robot, including planning, controllers, and launch integration.</description>
-  <maintainer email="mriera@todo.todo">mriera</maintainer>
-  <license>TODO: License declaration</license>
+  <maintainer email="maxime.riera@mecademic.com">Maxime Riera</maintainer>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
