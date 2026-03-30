@@ -1,0 +1,17 @@
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - meca_velocity_controller
+
+  meca_velocity_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - meca_axis_1
+      - meca_axis_2
+      - meca_axis_3
+      - meca_axis_4
+      - meca_axis_5
+      - meca_axis_6

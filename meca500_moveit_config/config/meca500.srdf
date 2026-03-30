@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="Meca500_R4">
+    <group name="meca_arm">
+        <chain base_link="base_link" tip_link="link_6"/>
+    </group>
+
+    <group_state name="home" group="meca_arm">
+        <joint name="meca_axis_1" value="0"/>
+        <joint name="meca_axis_2" value="0"/>
+        <joint name="meca_axis_3" value="0"/>
+        <joint name="meca_axis_4" value="0"/>
+        <joint name="meca_axis_5" value="0"/>
+        <joint name="meca_axis_6" value="0"/>
+    </group_state>
+
+    <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
+    <disable_collisions link1="link_1" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_2" link2="link_3" reason="Adjacent"/>
+    <disable_collisions link1="link_3" link2="link_4" reason="Adjacent"/>
+    <disable_collisions link1="link_3" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_3" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_4" link2="link_5" reason="Adjacent"/>
+    <disable_collisions link1="link_4" link2="link_6" reason="Never"/>
+    <disable_collisions link1="link_5" link2="link_6" reason="Adjacent"/>
+</robot>
