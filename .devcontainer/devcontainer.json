@@ -20,7 +20,7 @@
               "redhat.vscode-xml",
               "tamasfe.even-better-toml",
               "timonwong.shellcheck",
-              "yzhang.markdown-all-in-one",
+              "yzhang.markdown-all-in-one"
           ],
           "settings": {
               "files.associations": {
@@ -44,10 +44,11 @@
         "WAYLAND_DISPLAY": "wayland-0",
         "XDG_RUNTIME_DIR": "/mnt/wslg/runtime-dir",
         "PULSE_SERVER": "/mnt/wslg/PulseServer",
-        "LIBGL_ALWAYS_SOFTWARE": "1" // Use this if you don't have a GPU configured
+        "LIBGL_ALWAYS_SOFTWARE": "1", // Use this if you don't have a GPU configured
+        "ROS_LOCALHOST_ONLY": "0"
     },
   "runArgs": [
-        "--net=host",
+        "--network=host",
         "--ipc=host"
     ]
 }
