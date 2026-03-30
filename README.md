@@ -1,5 +1,8 @@
-# ROS 2 Meca500 Workspace
+# ROS2 Meca500 Workspace
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Ubuntu 22.04](https://shields.io/badge/Ubuntu-22.04-blue)
+![ROS Humble](https://shields.io/badge/ROS-Humble-green)
 ## Status
 
 This workspace is currently under development.
