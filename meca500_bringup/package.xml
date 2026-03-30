@@ -2,8 +2,8 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>meca500_bringup</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <version>0.0.1</version>
+  <description>Bringup package for the Meca500 robot arm, providing launch files and configuration for ros2_control, controllers, and RViz visualization.</description>
   <maintainer email="rosdev@todo.todo">rosdev</maintainer>
   <license>TODO: License declaration</license>
 
