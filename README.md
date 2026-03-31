@@ -119,6 +119,8 @@ ros2 launch meca500_moveit_config move_group.launch.py
 All packages in this workspace are licensed under the **Apache License 2.0**.
 See <https://www.apache.org/licenses/LICENSE-2.0> for the full license text.
 
+---
+
 > [!NOTE]  
 > - Package versions are currently `0.0.1` and actively evolving.
 > - APIs, launch files, and configuration may change without notice.
