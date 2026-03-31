@@ -111,15 +111,15 @@ source install/setup.bash
 ros2 launch meca500_moveit_config move_group.launch.py
 ```
 
-For full operation, run bringup and MoveIt in separate terminals after sourcing `install/setup.bash` in each terminal.
+> [!TIP]
+> For full operation, run bringup and MoveIt in separate terminals after sourcing `install/setup.bash` in each terminal.
 
 ## License
 
 All packages in this workspace are licensed under the **Apache License 2.0**.
 See <https://www.apache.org/licenses/LICENSE-2.0> for the full license text.
 
-## Notes
-
-- Package versions are currently `0.0.1` and actively evolving.
-- APIs, launch files, and configuration may change without notice.
-- Contributions and feedback are welcome to improve functionality and stability.
+> [!NOTE]  
+> - Package versions are currently `0.0.1` and actively evolving.
+> - APIs, launch files, and configuration may change without notice.
+> - Contributions and feedback are welcome to improve functionality and stability.
