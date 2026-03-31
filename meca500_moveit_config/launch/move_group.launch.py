@@ -64,8 +64,8 @@ def generate_launch_description():
     # 5. Trajectory execution settings — prevent premature timeout on real hardware
     trajectory_execution = {
         "trajectory_execution": {
-            "allowed_execution_duration_scaling": 1.2,
-            "allowed_goal_duration_margin": 0.5,
+            "allowed_execution_duration_scaling": 1.5,
+            "allowed_goal_duration_margin": 1.0,
             "execution_duration_monitoring": True,
         }
     }

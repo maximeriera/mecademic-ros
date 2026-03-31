@@ -367,6 +367,10 @@ hardware_interface::CallbackReturn Meca500SystemHardware::on_activate(
   // 6. Set acceleration to max - 100%
   send_command("SetJointAcc(100)");
 
+  // 7. Clear motion queue to ensure no residual commands are pending
+  send_command("ClearMotion()");
+  send_command("ResumeMotion()");
+
   // Zero command velocities
   std::fill(hw_joint_commands_velocity_.begin(), hw_joint_commands_velocity_.end(), 0.0);
 

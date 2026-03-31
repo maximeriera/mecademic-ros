@@ -1,6 +1,8 @@
 controller_manager:
   ros__parameters:
     update_rate: 500
+    state_publish_rate: 100.0   # Changes the "Controller state will be published at..." frequency
+    action_monitor_rate: 50.0   # Changes the "Action status changes will be monitored at..." frequency
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -25,9 +27,9 @@ meca_velocity_controller:
       - position
       - velocity
     gains:
-      meca_axis_1: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 3.70, u_clamp_min: -3.70}
-      meca_axis_2: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 3.70, u_clamp_min: -3.70}
-      meca_axis_3: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 3.70, u_clamp_min: -3.70}
-      meca_axis_4: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 5.80, u_clamp_min: -5.80}
-      meca_axis_5: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 5.80, u_clamp_min: -5.80}
-      meca_axis_6: {p: 1.0, i: 0.0, d: 0.0, ff_velocity_scale: 1.0, u_clamp_max: 8.40, u_clamp_min: -8.40}
+      meca_axis_1: {p: 0.95, i: 0.6, d: 0.0, ff_velocity_scale: 0.95, u_clamp_max: 3.70, u_clamp_min: -3.70}
+      meca_axis_2: {p: 0.95, i: 0.6, d: 0.0, ff_velocity_scale: 0.95, u_clamp_max: 3.70, u_clamp_min: -3.70}
+      meca_axis_3: {p: 0.95, i: 0.6, d: 0.0, ff_velocity_scale: 0.95, u_clamp_max: 3.70, u_clamp_min: -3.70}
+      meca_axis_4: {p: 0.95, i: 0.6, d: 0.0, ff_velocity_scale: 0.95, u_clamp_max: 5.80, u_clamp_min: -5.80}
+      meca_axis_5: {p: 0.95, i: 0.6, d: 0.0, ff_velocity_scale: 0.95, u_clamp_max: 5.80, u_clamp_min: -5.80}
+      meca_axis_6: {p: 0.95, i: 0.6, d: 0.0, ff_velocity_scale: 0.95, u_clamp_max: 8.40, u_clamp_min: -8.40}
