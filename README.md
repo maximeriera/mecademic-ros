@@ -23,7 +23,7 @@ This workspace is currently under development.
 
 ## Overview
 
-This repository contains a ROS 2 workspace for the Mecademic Meca500 robot arm, including:
+This repository contains a ROS 2 workspace for the Mecademic Meca500 R4 robot arm, including:
 
 - Robot description (URDF/Xacro and meshes)
 - ros2_control bringup
