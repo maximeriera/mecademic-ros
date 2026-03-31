@@ -8,9 +8,14 @@
 
 This workspace is currently under development.
 
-- Non-official project
-- Not supported by Mecademic
-- Use at your own risk
+- Non-official project/Not actively supported by Mecademic
+
+- This software is intended for research and laboratory environments. It has not been certified for production environments or safety-critical applications.
+
+- Total User Responsibility: You, the user, assume 100% of the risk associated with deploying this software on physical hardware. The authors, contributors, and maintainers of this repository are not responsible for any damage to equipment, facility infrastructure, or harm to personnel resulting from the use of this code.
+
+> [!IMPORTANT]  
+> This software is intended for use with industrial robotics hardware. Industrial robots are inherently dangerous machines capable of causing severe property damage and personal injury. Always ensure rigorous safety protocols and proper testing procedures are in place when using this workspace with physical hardware.
 
 ### Known Issues
 - Controller gains are not yet fully tuned for optimal performance
