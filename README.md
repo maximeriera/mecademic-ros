@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![Ubuntu 22.04](https://shields.io/badge/Ubuntu-22.04-blue)
 ![ROS Humble](https://shields.io/badge/ROS-Humble-green)
+
 ## Status
 
 This workspace is currently under development.
@@ -10,6 +11,10 @@ This workspace is currently under development.
 - Non-official project
 - Not supported by Mecademic
 - Use at your own risk
+
+### Known Issues
+- Controller gains are not yet fully tuned for optimal performance
+- Some MoveIt 2 features may not be fully tested or functional
 
 ## Overview
 
@@ -74,7 +79,7 @@ From the workspace root (`ros2_meca500_ws`):
 
 ```bash
 rosdep install --from-paths src --ignore-src -r -y
-colcon build --symlink-install
+colcon build
 source install/setup.bash
 ```
 
@@ -112,3 +117,4 @@ See <https://www.apache.org/licenses/LICENSE-2.0> for the full license text.
 
 - Package versions are currently `0.0.1` and actively evolving.
 - APIs, launch files, and configuration may change without notice.
+- Contributions and feedback are welcome to improve functionality and stability.
