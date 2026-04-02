@@ -138,6 +138,7 @@ bool Meca500SystemHardware::wait_for_response(int fd, int expected_code, int tim
 
 bool Meca500SystemHardware::parse_response(const std::string & msg, int & code, std::string & data)
 {
+  data.clear();
   // Response format: [code][data]  e.g. [2007][12.3,0.0,-5.1,0.0,90.0,0.0]
   if (msg.size() < 3 || msg[0] != '[') {
     return false;
