@@ -1,0 +1,513 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.1"
+    }
+    defaultPrim = "Meca500_R4"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Meca500_R4"
+{
+    def Scope "Geometry"
+    {
+        def Xform "world"
+        {
+            def Xform "base_link"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Xform "link_0" (
+                    prepend references = @./GeometryLibrary.usdc@</Geometry/link_0>
+                )
+                {
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Cylinder "cylinder"
+                {
+                    uniform token axis = "Z"
+                    float3[] extent = [(-0.045, -0.045, -0.0525), (0.045, 0.045, 0.0525)]
+                    double height = 0.105
+                    uniform token purpose = "guide"
+                    double radius = 0.045
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0.05)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Cube "box"
+                {
+                    float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                    uniform token purpose = "guide"
+                    double size = 1
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.115, 0.09, 0.06)
+                    double3 xformOp:translate = (-0.0125, 0, 0.03)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Xform "link_1"
+                {
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0.135)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "link_1" (
+                        prepend references = @./GeometryLibrary.usdc@</Geometry/link_1>
+                    )
+                    {
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Cube "box"
+                    {
+                        float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                        uniform token purpose = "guide"
+                        double size = 1
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (0.065, 0.1, 0.08)
+                        double3 xformOp:translate = (0, 0, -0.005)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "link_2"
+                    {
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Xform "link_2" (
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/link_2>
+                        )
+                        {
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Cube "box"
+                        {
+                            float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                            uniform token purpose = "guide"
+                            double size = 1
+                            quatf xformOp:orient = (0.9933948, 0, -0.11474662, 0)
+                            float3 xformOp:scale = (0.067, 0.065, 0.11)
+                            double3 xformOp:translate = (-0.005, 0, 0.025)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Cube "box_1" (
+                            displayName = "box"
+                        )
+                        {
+                            float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                            uniform token purpose = "guide"
+                            double size = 1
+                            quatf xformOp:orient = (0.9959527, 0, 0.08987863, 0)
+                            float3 xformOp:scale = (0.06, 0.1, 0.13)
+                            double3 xformOp:translate = (-0.007, 0, 0.1)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "link_3"
+                        {
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0.135)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                            def Xform "link_3" (
+                                prepend references = @./GeometryLibrary.usdc@</Geometry/link_3>
+                            )
+                            {
+                                quatf xformOp:orient = (1, 0, 0, 0)
+                                float3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0, 0, 0)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+
+                            def Cube "box"
+                            {
+                                float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                                uniform token purpose = "guide"
+                                double size = 1
+                                quatf xformOp:orient = (1, 0, 0, 0)
+                                float3 xformOp:scale = (0.09, 0.045, 0.065)
+                                double3 xformOp:translate = (0.017, 0, 0.03)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+
+                            def Cube "box_1" (
+                                displayName = "box"
+                            )
+                            {
+                                float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                                uniform token purpose = "guide"
+                                double size = 1
+                                quatf xformOp:orient = (1, 0, 0, 0)
+                                float3 xformOp:scale = (0.06, 0.065, 0.07)
+                                double3 xformOp:translate = (0, 0, -0.006)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+
+                            def Xform "link_4"
+                            {
+                                quatf xformOp:orient = (0.70710546, 0, 0.7071081, 0)
+                                float3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0, 0, 0.038)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                def Xform "link_4" (
+                                    prepend references = @./GeometryLibrary.usdc@</Geometry/link_4>
+                                )
+                                {
+                                    quatf xformOp:orient = (1.7948966e-9, 0, 0, 1)
+                                    float3 xformOp:scale = (1, 1, 1)
+                                    double3 xformOp:translate = (0, 0, 0.12)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                }
+
+                                def Cube "box"
+                                {
+                                    float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                                    uniform token purpose = "guide"
+                                    double size = 1
+                                    quatf xformOp:orient = (1, 0, 0, 0)
+                                    float3 xformOp:scale = (0.045, 0.075, 0.08)
+                                    double3 xformOp:translate = (0, 0, 0.1025)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                }
+
+                                def Xform "link_5"
+                                {
+                                    quatf xformOp:orient = (1, 0, 0, 0)
+                                    float3 xformOp:scale = (1, 1, 1)
+                                    double3 xformOp:translate = (0, 0, 0.12)
+                                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                    def Xform "link_5" (
+                                        prepend references = @./GeometryLibrary.usdc@</Geometry/link_5>
+                                    )
+                                    {
+                                        quatf xformOp:orient = (1, 0, 0, 0)
+                                        float3 xformOp:scale = (1, 1, 1)
+                                        double3 xformOp:translate = (0, 0, 0)
+                                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                    }
+
+                                    def Cube "box"
+                                    {
+                                        float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                                        uniform token purpose = "guide"
+                                        double size = 1
+                                        quatf xformOp:orient = (1, 0, 0, 0)
+                                        float3 xformOp:scale = (0.045, 0.047, 0.08)
+                                        double3 xformOp:translate = (0, 0, 0.02)
+                                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                    }
+
+                                    def Xform "link_6"
+                                    {
+                                        quatf xformOp:orient = (1, 0, 0, 0)
+                                        float3 xformOp:scale = (1, 1, 1)
+                                        double3 xformOp:translate = (0, 0, 0.07)
+                                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                                        def Xform "link_6" (
+                                            prepend references = @./GeometryLibrary.usdc@</Geometry/link_6>
+                                        )
+                                        {
+                                            quatf xformOp:orient = (1, 0, 0, 0)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (0, 0, 0)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                        }
+
+                                        def Cylinder "cylinder"
+                                        {
+                                            uniform token axis = "Z"
+                                            float3[] extent = [(-0.015, -0.015, -0.01), (0.015, 0.015, 0.01)]
+                                            double height = 0.02
+                                            uniform token purpose = "guide"
+                                            double radius = 0.015
+                                            quatf xformOp:orient = (1, 0, 0, 0)
+                                            float3 xformOp:scale = (1, 1, 1)
+                                            double3 xformOp:translate = (0, 0, -0.01)
+                                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        def Scope "custom"
+        {
+            def Scope "ros2_control"
+            {
+                custom string urdf:name = "Meca500System"
+                custom string urdf:type = "system"
+
+                def Scope "hardware"
+                {
+                    def Scope "plugin"
+                    {
+                        custom string urdf:text = "meca500_hardware/Meca500SystemHardware"
+                    }
+
+                    def Scope "param"
+                    {
+                        custom string urdf:name = "robot_ip"
+                        custom string urdf:text = "192.168.0.100"
+                    }
+                }
+
+                def Scope "joint"
+                {
+                    custom string urdf:name = "meca_axis_1"
+
+                    def Scope "command_interface"
+                    {
+                        custom string urdf:name = "velocity"
+
+                        def Scope "param"
+                        {
+                            custom string urdf:name = "min"
+                            custom string urdf:text = "-2.61"
+                        }
+
+                        def Scope "param_1" (
+                            displayName = "param"
+                        )
+                        {
+                            custom string urdf:name = "max"
+                            custom string urdf:text = "2.61"
+                        }
+                    }
+
+                    def Scope "state_interface"
+                    {
+                        custom string urdf:name = "position"
+                    }
+
+                    def Scope "state_interface_1" (
+                        displayName = "state_interface"
+                    )
+                    {
+                        custom string urdf:name = "velocity"
+                    }
+                }
+
+                def Scope "joint_1" (
+                    displayName = "joint"
+                )
+                {
+                    custom string urdf:name = "meca_axis_2"
+
+                    def Scope "command_interface"
+                    {
+                        custom string urdf:name = "velocity"
+
+                        def Scope "param"
+                        {
+                            custom string urdf:name = "min"
+                            custom string urdf:text = "-2.61"
+                        }
+
+                        def Scope "param_1" (
+                            displayName = "param"
+                        )
+                        {
+                            custom string urdf:name = "max"
+                            custom string urdf:text = "2.61"
+                        }
+                    }
+
+                    def Scope "state_interface"
+                    {
+                        custom string urdf:name = "position"
+                    }
+
+                    def Scope "state_interface_1" (
+                        displayName = "state_interface"
+                    )
+                    {
+                        custom string urdf:name = "velocity"
+                    }
+                }
+
+                def Scope "joint_2" (
+                    displayName = "joint"
+                )
+                {
+                    custom string urdf:name = "meca_axis_3"
+
+                    def Scope "command_interface"
+                    {
+                        custom string urdf:name = "velocity"
+
+                        def Scope "param"
+                        {
+                            custom string urdf:name = "min"
+                            custom string urdf:text = "-3.14"
+                        }
+
+                        def Scope "param_1" (
+                            displayName = "param"
+                        )
+                        {
+                            custom string urdf:name = "max"
+                            custom string urdf:text = "3.14"
+                        }
+                    }
+
+                    def Scope "state_interface"
+                    {
+                        custom string urdf:name = "position"
+                    }
+
+                    def Scope "state_interface_1" (
+                        displayName = "state_interface"
+                    )
+                    {
+                        custom string urdf:name = "velocity"
+                    }
+                }
+
+                def Scope "joint_3" (
+                    displayName = "joint"
+                )
+                {
+                    custom string urdf:name = "meca_axis_4"
+
+                    def Scope "command_interface"
+                    {
+                        custom string urdf:name = "velocity"
+
+                        def Scope "param"
+                        {
+                            custom string urdf:name = "min"
+                            custom string urdf:text = "-5.23"
+                        }
+
+                        def Scope "param_1" (
+                            displayName = "param"
+                        )
+                        {
+                            custom string urdf:name = "max"
+                            custom string urdf:text = "5.23"
+                        }
+                    }
+
+                    def Scope "state_interface"
+                    {
+                        custom string urdf:name = "position"
+                    }
+
+                    def Scope "state_interface_1" (
+                        displayName = "state_interface"
+                    )
+                    {
+                        custom string urdf:name = "velocity"
+                    }
+                }
+
+                def Scope "joint_4" (
+                    displayName = "joint"
+                )
+                {
+                    custom string urdf:name = "meca_axis_5"
+
+                    def Scope "command_interface"
+                    {
+                        custom string urdf:name = "velocity"
+
+                        def Scope "param"
+                        {
+                            custom string urdf:name = "min"
+                            custom string urdf:text = "-5.23"
+                        }
+
+                        def Scope "param_1" (
+                            displayName = "param"
+                        )
+                        {
+                            custom string urdf:name = "max"
+                            custom string urdf:text = "5.23"
+                        }
+                    }
+
+                    def Scope "state_interface"
+                    {
+                        custom string urdf:name = "position"
+                    }
+
+                    def Scope "state_interface_1" (
+                        displayName = "state_interface"
+                    )
+                    {
+                        custom string urdf:name = "velocity"
+                    }
+                }
+
+                def Scope "joint_5" (
+                    displayName = "joint"
+                )
+                {
+                    custom string urdf:name = "meca_axis_6"
+
+                    def Scope "command_interface"
+                    {
+                        custom string urdf:name = "velocity"
+
+                        def Scope "param"
+                        {
+                            custom string urdf:name = "min"
+                            custom string urdf:text = "-8.72"
+                        }
+
+                        def Scope "param_1" (
+                            displayName = "param"
+                        )
+                        {
+                            custom string urdf:name = "max"
+                            custom string urdf:text = "8.72"
+                        }
+                    }
+
+                    def Scope "state_interface"
+                    {
+                        custom string urdf:name = "position"
+                    }
+
+                    def Scope "state_interface_1" (
+                        displayName = "state_interface"
+                    )
+                    {
+                        custom string urdf:name = "velocity"
+                    }
+                }
+            }
+        }
+    }
+}
+

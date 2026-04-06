@@ -1,0 +1,1899 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.1"
+    }
+    defaultPrim = "Meca500_R4"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Meca500_R4"
+{
+    def Scope "Materials"
+    {
+        def Material "ID10" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID10>
+        )
+        {
+        }
+
+        def Material "ID11" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID11>
+        )
+        {
+        }
+
+        def Material "ID12" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID12>
+        )
+        {
+        }
+
+        def Material "ID13" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID13>
+        )
+        {
+        }
+
+        def Material "ID14" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID14>
+        )
+        {
+        }
+
+        def Material "ID15" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID15>
+        )
+        {
+        }
+
+        def Material "ID16" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID16>
+        )
+        {
+        }
+
+        def Material "ID17" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID17>
+        )
+        {
+        }
+
+        def Material "ID18" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID18>
+        )
+        {
+        }
+
+        def Material "ID19" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID19>
+        )
+        {
+        }
+
+        def Material "ID20" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID20>
+        )
+        {
+        }
+
+        def Material "ID21" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID21>
+        )
+        {
+        }
+
+        def Material "ID22" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID22>
+        )
+        {
+        }
+
+        def Material "ID23" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID23>
+        )
+        {
+        }
+
+        def Material "ID24" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID24>
+        )
+        {
+        }
+
+        def Material "ID25" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID25>
+        )
+        {
+        }
+
+        def Material "grey" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/grey>
+        )
+        {
+        }
+
+        def Material "ID9" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID9>
+        )
+        {
+        }
+
+        def Material "ID10_1" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID10_1>
+        )
+        {
+        }
+
+        def Material "ID10_2" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID10_2>
+        )
+        {
+        }
+
+        def Material "ID11_1" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID11_1>
+        )
+        {
+        }
+
+        def Material "ID12_1" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID12_1>
+        )
+        {
+        }
+
+        def Material "ID10_3" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID10_3>
+        )
+        {
+        }
+
+        def Material "ID11_2" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID11_2>
+        )
+        {
+        }
+
+        def Material "ID9_1" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID9_1>
+        )
+        {
+        }
+
+        def Material "ID10_4" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID10_4>
+        )
+        {
+        }
+
+        def Material "ID11_3" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID11_3>
+        )
+        {
+        }
+
+        def Material "ID12_2" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID12_2>
+        )
+        {
+        }
+
+        def Material "ID10_5" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID10_5>
+        )
+        {
+        }
+
+        def Material "ID11_4" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID11_4>
+        )
+        {
+        }
+
+        def Material "ID12_3" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID12_3>
+        )
+        {
+        }
+
+        def Material "ID10_6" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID10_6>
+        )
+        {
+        }
+
+        def Material "ID11_5" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/ID11_5>
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "world"
+        {
+            over "base_link"
+            {
+                over "link_0" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Meca500_R4/Materials/grey>
+
+                    over "tn__"
+                    {
+                        over "GeomSubset_001" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID10>
+                        }
+
+                        over "GeomSubset_002" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID11>
+                        }
+
+                        over "GeomSubset_003" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID12>
+                        }
+
+                        over "GeomSubset_004" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID13>
+                        }
+
+                        over "GeomSubset_005" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID14>
+                        }
+
+                        over "GeomSubset_006" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID15>
+                        }
+
+                        over "GeomSubset_007" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID16>
+                        }
+
+                        over "GeomSubset_008" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID17>
+                        }
+
+                        over "GeomSubset_009" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID18>
+                        }
+
+                        over "GeomSubset_010" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID19>
+                        }
+
+                        over "GeomSubset_011" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID20>
+                        }
+
+                        over "GeomSubset_012" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID21>
+                        }
+
+                        over "GeomSubset_013" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID22>
+                        }
+
+                        over "GeomSubset_014" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID23>
+                        }
+
+                        over "GeomSubset_015" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID24>
+                        }
+
+                        over "GeomSubset_016" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID25>
+                        }
+                    }
+
+                    over "_1" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_2" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_3" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_4" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_5" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_6"
+                    {
+                        over "GeomSubset_001" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID13>
+                        }
+
+                        over "GeomSubset_002" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID24>
+                        }
+                    }
+
+                    over "_7" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_8" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_9" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_10" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+
+                    over "_11" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/ID21>
+                    }
+                }
+
+                over "link_1"
+                {
+                    over "link_1" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Meca500_R4/Materials/grey>
+
+                        over "tn__"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_1" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID10_1>
+                        }
+
+                        over "_2" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/ID10_1>
+                        }
+
+                        over "_3"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_4"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_5"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_6"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_7"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_8"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_9"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_10"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+
+                        over "_11"
+                        {
+                            over "GeomSubset_001" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID9>
+                            }
+
+                            over "GeomSubset_002" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/ID10_1>
+                            }
+                        }
+                    }
+
+                    over "link_2"
+                    {
+                        over "link_2" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Meca500_R4/Materials/grey>
+
+                            over "tn__"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID11_1>
+                                }
+
+                                over "GeomSubset_003" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_1"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_2"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_3"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_4"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_5"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_6"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_7"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_8"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_9"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_10"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_11"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_12"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_13"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_14"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_15"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_16"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_17"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID11_1>
+                                }
+                            }
+
+                            over "_18"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_19"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID11_1>
+                                }
+
+                                over "GeomSubset_003" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_20"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID11_1>
+                                }
+
+                                over "GeomSubset_003" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_21"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_22"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID11_1>
+                                }
+                            }
+
+                            over "_23"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_24"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_25"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_26"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_27"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_28"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_29"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_30"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_31"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_32"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_33"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_34"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_35"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_36"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_37"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+
+                            over "_38"
+                            {
+                                over "GeomSubset_001" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID10_2>
+                                }
+
+                                over "GeomSubset_002" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/ID12_1>
+                                }
+                            }
+                        }
+
+                        over "link_3"
+                        {
+                            over "link_3" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Meca500_R4/Materials/grey>
+
+                                over "tn__"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_1"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_2"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_3"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_4"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_5"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_6"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_7"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_8"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_9"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+
+                                over "_10"
+                                {
+                                    over "GeomSubset_001" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID10_3>
+                                    }
+
+                                    over "GeomSubset_002" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/ID11_2>
+                                    }
+                                }
+                            }
+
+                            over "link_4"
+                            {
+                                over "link_4" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Meca500_R4/Materials/grey>
+
+                                    over "tn__"
+                                    {
+                                        over "GeomSubset_001" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID9_1>
+                                        }
+
+                                        over "GeomSubset_002" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID10_4>
+                                        }
+
+                                        over "GeomSubset_003" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID11_3>
+                                        }
+
+                                        over "GeomSubset_004" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID12_2>
+                                        }
+                                    }
+
+                                    over "_1"
+                                    {
+                                        over "GeomSubset_001" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID9_1>
+                                        }
+
+                                        over "GeomSubset_002" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID12_2>
+                                        }
+                                    }
+
+                                    over "_2"
+                                    {
+                                        over "GeomSubset_001" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID9_1>
+                                        }
+
+                                        over "GeomSubset_002" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID10_4>
+                                        }
+
+                                        over "GeomSubset_003" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID12_2>
+                                        }
+                                    }
+
+                                    over "_3"
+                                    {
+                                        over "GeomSubset_001" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID9_1>
+                                        }
+
+                                        over "GeomSubset_002" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/ID12_2>
+                                        }
+                                    }
+                                }
+
+                                over "link_5"
+                                {
+                                    over "link_5" (
+                                        prepend apiSchemas = ["MaterialBindingAPI"]
+                                    )
+                                    {
+                                        rel material:binding = </Meca500_R4/Materials/grey>
+
+                                        over "tn__"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID11_4>
+                                            }
+
+                                            over "GeomSubset_003" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_1"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_2"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_3"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_4"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_5"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_6"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_7"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_8"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_9"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_10"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_11"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+
+                                        over "_12"
+                                        {
+                                            over "GeomSubset_001" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID10_5>
+                                            }
+
+                                            over "GeomSubset_002" (
+                                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding = </Meca500_R4/Materials/ID12_3>
+                                            }
+                                        }
+                                    }
+
+                                    over "link_6"
+                                    {
+                                        over "link_6" (
+                                            prepend apiSchemas = ["MaterialBindingAPI"]
+                                        )
+                                        {
+                                            rel material:binding = </Meca500_R4/Materials/grey>
+
+                                            over "tn__"
+                                            {
+                                                over "GeomSubset_001" (
+                                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding = </Meca500_R4/Materials/ID10_6>
+                                                }
+
+                                                over "GeomSubset_002" (
+                                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding = </Meca500_R4/Materials/ID11_5>
+                                                }
+                                            }
+
+                                            over "_1"
+                                            {
+                                                over "GeomSubset_001" (
+                                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding = </Meca500_R4/Materials/ID10_6>
+                                                }
+
+                                                over "GeomSubset_002" (
+                                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding = </Meca500_R4/Materials/ID11_5>
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
