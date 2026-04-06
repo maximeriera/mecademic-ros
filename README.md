@@ -18,6 +18,7 @@ This workspace is currently under development.
 > This software is intended for use with industrial robotics hardware. Industrial robots are inherently dangerous machines capable of causing severe property damage and personal injury. Always ensure rigorous safety protocols and proper testing procedures are in place when using this workspace with physical hardware.
 
 ### Known Issues
+- Inertial parameters have not yet been identified or validated, which may affect dynamic performance and control accuracy
 - Controller gains are not fully tuned for optimal performance
 - Desired speed limited to 70% of theoretical maximum due to controller missing clamping ([Humble limitation](https://control.ros.org/humble/doc/ros2_controllers/joint_trajectory_controller/doc/parameters.html))
 - Desired acceleration limited to 90% of theoretical maximum due to controller missing clamping ([Humble limitation](https://control.ros.org/humble/doc/ros2_controllers/joint_trajectory_controller/doc/parameters.html))
