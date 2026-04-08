@@ -1,8 +1,8 @@
 # ROS2 Meca500 Workspace
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Ubuntu 22.04](https://shields.io/badge/Ubuntu-22.04-blue)](https://releases.ubuntu.com/jammy/)
-[![ROS Humble](https://shields.io/badge/ROS-Humble-green)](https://docs.ros.org/en/humble/index.html)
+[![Ubuntu 22.04](https://shields.io/badge/Ubuntu-22.04-blue?logo=Ubuntu)](https://releases.ubuntu.com/jammy/)
+[![ROS Humble](https://shields.io/badge/ROS-Humble-green?logo=Ros)](https://docs.ros.org/en/humble/index.html)
 
 ## Status
 
