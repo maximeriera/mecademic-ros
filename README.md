@@ -1,4 +1,4 @@
-# ROS2 Meca500 Workspace
+# Mecademic ROS2 packages
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Ubuntu 22.04](https://shields.io/badge/Ubuntu-22.04-blue?logo=Ubuntu)](https://releases.ubuntu.com/jammy/)
