@@ -21,6 +21,11 @@ if(BUILD_TESTING)
   # a copyright and license is added to all source files
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(test_urdf test/test_urdf.py
+    APPEND_ENV PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}
+  )
 endif()
 
 # Install the directories containing your robot description and launch files

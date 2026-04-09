@@ -27,6 +27,11 @@ if(BUILD_TESTING)
   # a copyright and license is added to all source files
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(${PROJECT_NAME}_test test/test_meca500_system.cpp)
+  target_include_directories(${PROJECT_NAME}_test PRIVATE include)
+  target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME})
 endif()
 
 # Build the shared library

@@ -97,6 +97,7 @@ private:
   // Background worker function to continuously poll the TCP monitor port
   void receive_data_loop();
 
+protected:
   // Parse a Meca500 response message of the form [code][data]
   static bool parse_response(const std::string & msg, int & code, std::string & data);
   static bool parse_joint_values(const std::string & data, double values[6]);
